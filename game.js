@@ -3,7 +3,7 @@ const gameState = {
     currentPlayer: 0,
     players: [
         {
-            name: 'Yuki',
+            name: 'Heather',
             description: 'Asian Adventurer',
             level: 1,
             captures: 0,
@@ -11,7 +11,7 @@ const gameState = {
             emoji: '🧑‍🦱'
         },
         {
-            name: 'Emma',
+            name: 'Jerrica',
             description: 'White Adventurer',
             level: 1,
             captures: 0,
