@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaufort Quest - A Pokemon-like Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- TITLE SCREEN -->
+    <div id="titleScreen" class="screen">
+        <div class="title-container">
+            <div class="game-title">🐱 BEAUFORT QUEST 🐱</div>
+            <div class="subtitle">A Journey to Find a Life</div>
+            
+            <div class="character-intro">
+                <div class="character-card">
+                    <div class="character-emoji">👩</div>
+                    <h2>Yuki</h2>
+                    <p><strong>Asian Adventurer</strong></p>
+                    <p class="small-text">Brave and determined</p>
+                </div>
+                
+                <div class="vs-text">VS</div>
+                
+                <div class="character-card">
+                    <div class="character-emoji">👩‍🦰</div>
+                    <h2>Emma</h2>
+                    <p><strong>White Adventurer</strong></p>
+                    <p class="small-text">Quick and clever</p>
+                </div>
+            </div>
+            
+            <div class="quest-description">
+                <h3>📜 The Quest</h3>
+                <p>Two adventurers unite on a legendary journey to find <strong>Beaufort</strong>, the most elusive and magical hairless cat in existence.</p>
+                <p>Together, Yuki and Emma must:</p>
+                <ul style="text-align: left; display: inline-block; color: #555;">
+                    <li>🗺️ Explore mysterious locations</li>
+                    <li>🐱 Encounter wild cats</li>
+                    <li>⚔️ Capture them and grow stronger</li>
+                    <li>✨ Find the legendary Beaufort</li>
+                </ul>
+                <p style="margin-top: 20px;"><em>"In the search for Beaufort lies the search for life itself..."</em></p>
+            </div>
+            
+            <button class="btn btn-primary" onclick="startGame()">⭐ START ADVENTURE ⭐</button>
+        </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="gameScreen" class="screen">
+        <div class="header">
+            <div class="player-info">
+                <h2 id="currentPlayerName">Player</h2>
+                <p>Level: <strong id="playerLevel">1</strong></p>
+                <p>Cats Captured: <strong id="captureCount">0</strong></p>
+                <p>Location: <strong id="locationName">Starting Area</strong></p>
+            </div>
+            <div>
+                <button class="btn btn-info" onclick="switchCharacter()">🔄 Switch Character</button>
+                <button class="btn btn-info" onclick="showInventory()">📦 Inventory</button>
+                <button class="btn btn-info" onclick="showStatus()">📊 Status</button>
+                <button class="btn btn-secondary" onclick="returnToMenu()">🏠 Menu</button>
+            </div>
+        </div>
+
+        <div class="game-content">
+            <div class="map-section">
+                <h3>🗺️ Map</h3>
+                <div id="gameMap" class="game-map"></div>
+            </div>
+
+            <div class="event-section">
+                <h3>📜 Event Log</h3>
+                <div id="eventLog" class="event-log"></div>
+            </div>
+
+            <div class="actions-section">
+                <button class="btn btn-success" onclick="explore()">🔍 Explore</button>
+                <button class="btn btn-info" onclick="showStatus()">📊 View Status</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENCOUNTER SCREEN -->
+    <div id="encounterScreen" class="screen">
+        <div class="encounter-container">
+            <h1 id="encounterTitle">A wild cat appears!</h1>
+            
+            <div class="encounter-display">
+                <div id="encounterImage" style="font-size: 120px;">🐱</div>
+                <p id="encounterDescription">A mysterious cat has appeared!</p>
+            </div>
+
+            <div class="encounter-stats">
+                <p><strong>Power:</strong> <span id="catPower">5</span></p>
+                <p><strong>Rarity:</strong> <span id="catRarity">Common</span></p>
+            </div>
+
+            <div id="captureMessage" class="encounter-message"></div>
+
+            <div class="encounter-actions">
+                <button class="btn btn-success" onclick="attemptCapture()">🎯 Capture</button>
+                <button class="btn btn-danger" onclick="fleeEncounter()">💨 Flee</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VICTORY SCREEN -->
+    <div id="victoryScreen" class="screen">
+        <div class="victory-container">
+            <div class="victory-title">🎉 VICTORY! 🎉</div>
+            
+            <div class="victory-content">
+                <h2>Beaufort Found!</h2>
+                <p class="victory-message">
+                    After an epic journey across magical lands, Yuki and Emma have finally captured Beaufort, the legendary hairless cat!
+                </p>
+                <p class="victory-message">
+                    In finding Beaufort, they have found their life's purpose. The quest is complete! 🌟
+                </p>
+                
+                <div class="victory-stats">
+                    <h3>Final Statistics</h3>
+                    <p id="finalStats"></p>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="returnToMenu()">🏠 Return to Menu</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
